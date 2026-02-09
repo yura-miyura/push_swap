@@ -1,15 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yartym <yartym@student.42london.com>       +#+  +:+       +#+        */
+/*   By: yuriiartymicloud.com <yuriiartymicloud.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/08 08:40:12 by yartym            #+#    #+#             */
-/*   Updated: 2026/02/08 15:11:27 by yartym           ###   ########.fr       */
+/*   Created: 2025/10/28 12:08:58 by yuriiartymi       #+#    #+#             */
+/*   Updated: 2026/01/11 22:45:53 by yuriiartymi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	main(int ac, char **av)
+#include "libft.h"
+
+// Outputs a char to a file descriptor.
+void	ft_putchar_fd(char c, int fd)
 {
+	write(fd, &c, 1);
 }

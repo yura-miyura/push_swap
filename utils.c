@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yartym <yartym@student.42london.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/08 15:32:47 by yartym            #+#    #+#             */
-/*   Updated: 2026/02/08 16:39:07 by yartym           ###   ########.fr       */
+/*   Created: 2026/02/09 15:32:43 by yartym            #+#    #+#             */
+/*   Updated: 2026/02/09 15:43:37 by yartym           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-int main(void)
+int *put_nbr_in_array(int ac, char **av)
 {
-	size_t size1 = 2;
-	size_t size2 = 2;
-	int *a1 = malloc(sizeof (int) * 3);
-	int *a2 = malloc(sizeof (int) * 3);
-	a1[0] = 1;
-	a1[1] = 2;
-	a2[0] = -1;
-	a2[1] = -2;
-	push(a1, a2, &size1, &size2);
-	for (int i = 0; i < size1; i++)
-		printf("a1: %d\n", a1[i]);
-	for (int i = 0; i < size2; i++)
-		printf("a2: %d\n", a2[i]);
+	int	*numbers;
+	int	i;
+
+	number = malloc(sizeof (int) * (ac - 1));
+	if (!numbers)
+		return (NULL);
+	i = 0;
+	while (++i < ac)
+		numbers[i - 1] = ft_atoi(av[i])
+	return (numbers);
 }
+
+// TODO
+// sort numbers function
+// check if argument is a number

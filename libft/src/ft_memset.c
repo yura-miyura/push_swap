@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yartym <yartym@student.42london.com>       +#+  +:+       +#+        */
+/*   By: yuriiartymicloud.com <yuriiartymicloud.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/08 15:12:46 by yartym            #+#    #+#             */
-/*   Updated: 2026/02/08 16:08:45 by yartym           ###   ########.fr       */
+/*   Created: 2025/10/23 14:48:48 by yartym            #+#    #+#             */
+/*   Updated: 2026/01/11 22:37:55 by yuriiartymi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include "../alibft"
-
-typedef stuct s_stack
+// Fills memory with a constant byte. doesn't catch the input NULL
+void	*ft_memset(void *s, int c, size_t n)
 {
-	int				number;
-	unsigned int	index;
-	struct s_stack	*previous;
-	struct s_stack	*next;
-}					t_stack
+	unsigned char	*tmp;
 
-
-
-
-#endif
+	tmp = (unsigned char *) s;
+	while (n--)
+		*tmp++ = c;
+	return (s);
+}

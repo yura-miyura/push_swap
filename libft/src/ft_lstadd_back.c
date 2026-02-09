@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yartym <yartym@student.42london.com>       +#+  +:+       +#+        */
+/*   By: yuriiartymicloud.com <yuriiartymicloud.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/08 15:56:44 by yartym            #+#    #+#             */
-/*   Updated: 2026/02/08 16:05:02 by yartym           ###   ########.fr       */
+/*   Created: 2025/10/28 18:58:40 by yuriiartymi       #+#    #+#             */
+/*   Updated: 2026/01/11 22:47:33 by yuriiartymi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	swap_a()
+// Adds an element at the end of a list.
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (!stack_a)
-		return (0);
+	t_list	*node;
 
-
+	if (*lst == NULL)
+		*lst = new;
+	else
+	{
+		node = ft_lstlast(*lst);
+		node->next = new;
+	}
 }
