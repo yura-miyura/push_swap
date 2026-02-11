@@ -51,3 +51,17 @@ int	rotate(int *stack, int size)
 	}
 	return (0);
 }
+
+int	reverse_rotate(int *stack, int size)
+{
+	int	tmp;
+
+	if (stack && size > 1)
+	{
+		tmp = *(stack);
+		ft_memmove(stack, stack + 1, sizeof (int) * (size - 1));
+		*(stack + size - 1) = tmp;
+		return (1);
+	}
+	return (0);
+}

@@ -34,5 +34,6 @@ int		valid_arg(char *arg, int (*f)(int));
 int		swap(int *stack, int size);
 int		push(int *from, int *to, int *s_from, int *s_to);
 int		rotate(int *stack, int size);
+int		reverse_rotate(int *stack, int size);
 
 #endif

@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-// Converts a string to an integer. to be treated as 0
+// Converts a string to an integer. If no number, result to be treated as 0
 int	ft_atoi(const char *str)
 {
 	int		result;

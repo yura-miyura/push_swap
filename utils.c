@@ -46,16 +46,22 @@ int *buble_sort(int *array, int size)
 {
 	int	i;
 	int	swapped;
+	int	tmp;
 
 	i = 0;
 	swapped = 0;
 	if (!array)
 		return (NULL);
-	while(i < size)
+	while(i < size - 1)
 	{
-		if (swap(array + i++, size))
+		if (array[i] > array[i + 1])
+		{
+			tmp = array[i];
+			array[i] = array[i + 1];
+			array[i + 1] = tmp;
 			swapped = 1;
-		else if (swapped && i == size)
+		}
+		if (++i == size - 1 && swapped)
 		{
 			i = 0;
 			swapped = 0;

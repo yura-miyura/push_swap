@@ -19,9 +19,8 @@ LIBFT = ${LIBFT_DIR}/libft.a
 OBJ_DIR = obj
 
 SRCS = main.c \
-		lst.c \
 		utils.c \
-		swap.c \
+		s_p_r_rr.c \
 
 
 OBJS = $(addprefix ${OBJ_DIR}/, ${SRCS:.c=.o})
