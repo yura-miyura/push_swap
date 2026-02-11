@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   s_p_r_rr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yartym <yartym@student.42london.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 18:16:59 by yartym            #+#    #+#             */
-/*   Updated: 2026/02/11 09:11:22 by yartym           ###   ########.fr       */
+/*   Updated: 2026/02/11 20:08:49 by yartym           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	swap(int *stack, int size)
+int	swap(t_number *stack, int size)
 {
-	int tmp;
+	t_number	tmp;
 
 	if (size > 1)
 	{
@@ -26,7 +26,7 @@ int	swap(int *stack, int size)
 	return (0);
 }
 
-int	push(int *from, int *to, int *s_from, int *s_to)
+int	push(*from, *to, int *s_from, int *s_to)
 {
 	if (*s_from && from && to)
 	{
@@ -38,7 +38,7 @@ int	push(int *from, int *to, int *s_from, int *s_to)
 	return (0);
 }
 
-int	rotate(int *stack, int size)
+int	rotate(*stack, int size)
 {
 	int	tmp;
 
@@ -52,7 +52,7 @@ int	rotate(int *stack, int size)
 	return (0);
 }
 
-int	reverse_rotate(int *stack, int size)
+int	reverse_rotate(t_numbers *stack, int size)
 {
 	int	tmp;
 

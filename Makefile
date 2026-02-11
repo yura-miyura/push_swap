@@ -6,7 +6,7 @@
 #    By: yuriiartymicloud.com <yuriiartymicloud.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/21 18:12:56 by yuriiartymi       #+#    #+#              #
-#    Updated: 2026/02/11 08:50:54 by yartym           ###   ########.fr        #
+#    Updated: 2026/02/11 20:03:36 by yartym           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ LIBFT = ${LIBFT_DIR}/libft.a
 OBJ_DIR = obj
 
 SRCS = main.c \
-		utils.c \
+		init_stack.c \
 		s_p_r_rr.c \
 
 

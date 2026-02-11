@@ -6,7 +6,7 @@
 /*   By: yartym <yartym@student.42london.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 08:40:12 by yartym            #+#    #+#             */
-/*   Updated: 2026/02/11 08:52:03 by yartym           ###   ########.fr       */
+/*   Updated: 2026/02/11 20:04:45 by yartym           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,18 @@
 
 int	main(int ac, char **av)
 {
-	// int	*stack_a;
-	// int	*stack_b;
-	int		*tmp;
+	t_number	*stack_a;
 
-	tmp = buble_sort(put_nbr_in_array(ac, av), ac - 1);
+	stack_a = init_stack(ac, av);
+	// create stack_a with input values
+		// create array with inputs and sort it to get index values +
+		// create array of structs with number and it's index in input order
+		// return
 
+	// sort them and return char ** of operationsd
+	// combine operations
+	// print operations
 	for (int i = 0; i < ac - 1; i++)
-		printf("%d\n", tmp[i]);
-	free(tmp);
+		printf("%d\n", stack_a[i].index);
+	free(stack_a);
 }

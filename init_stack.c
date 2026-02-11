@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   init_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yartym <yartym@student.42london.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/09 15:32:43 by yartym            #+#    #+#             */
-/*   Updated: 2026/02/11 09:01:16 by yartym           ###   ########.fr       */
+/*   Created: 2026/02/11 18:08:30 by yartym            #+#    #+#             */
+/*   Updated: 2026/02/11 20:01:48 by yartym           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	valid_arg(char *arg, int (*f)(int))
 	return (1);
 }
 
-int *buble_sort(int *array, int size)
+int *bubble_sort(int *array, int size)
 {
 	int	i;
 	int	swapped;
@@ -69,3 +69,38 @@ int *buble_sort(int *array, int size)
 	}
 	return (array);
 }
+
+// Converts value to it's index in sorted array. Returns -1 on Error
+int	value_to_index(int *tmp, int n, int size)
+{
+	int	i;
+
+	i = -1;
+	while(tmp && ++i < size)
+		if (n == tmp[i])
+			return (i);
+	return (-1);
+}
+
+t_number *init_stack(int ac, char **av)
+{
+	int			*stack;
+	int			*tmp;
+	t_number	*numbers;
+	int			i;
+
+
+	tmp = bubble_sort(put_nbr_in_array(ac, av), ac -1);
+	stack = put_nbr_in_array(ac, av);
+	numbers = malloc(sizeof (t_number) * ac - 1);
+	if (!stack || !numbers || !tmp)
+		return (NULL);
+	i = -1;
+	while (++i < ac - 1)
+	{
+		numbers[i].number = stack[i];
+		numbers[i].index = value_to_index(tmp, stack[i], ac - 1);
+	}
+	return (free(stack), free(tmp), numbers);
+}
+
