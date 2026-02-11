@@ -6,7 +6,7 @@
 #    By: yuriiartymicloud.com <yuriiartymicloud.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/21 18:12:56 by yuriiartymi       #+#    #+#              #
-#    Updated: 2025/12/25 09:51:06 by yuriiartymi      ###   ########.fr        #
+#    Updated: 2026/02/11 08:50:54 by yartym           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,8 @@ OBJ_DIR = obj
 
 SRCS = main.c \
 		lst.c \
+		utils.c \
+		swap.c \
 
 
 OBJS = $(addprefix ${OBJ_DIR}/, ${SRCS:.c=.o})
