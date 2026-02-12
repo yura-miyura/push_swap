@@ -21,6 +21,7 @@ OBJ_DIR = obj
 SRCS = main.c \
 		init_stack.c \
 		s_p_r_rr.c \
+		next_number.c \
 
 
 OBJS = $(addprefix ${OBJ_DIR}/, ${SRCS:.c=.o})
