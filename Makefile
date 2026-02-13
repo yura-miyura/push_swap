@@ -6,7 +6,7 @@
 #    By: yuriiartymicloud.com <yuriiartymicloud.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/21 18:12:56 by yuriiartymi       #+#    #+#              #
-#    Updated: 2026/02/11 20:03:36 by yartym           ###   ########.fr        #
+#    Updated: 2026/02/13 09:29:49 by yartym           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SRCS = main.c \
 		init_stack.c \
 		s_p_r_rr.c \
 		next_number.c \
+		operations.c \
 
 
 OBJS = $(addprefix ${OBJ_DIR}/, ${SRCS:.c=.o})

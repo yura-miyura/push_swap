@@ -6,7 +6,7 @@
 /*   By: yartym <yartym@student.42london.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 15:12:46 by yartym            #+#    #+#             */
-/*   Updated: 2026/02/12 10:15:44 by yartym           ###   ########.fr       */
+/*   Updated: 2026/02/13 12:04:33 by yartym           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdio.h>
 # include "libft/includes/libft.h"
 
-# define RANGE_SIZE 5
+# define RANGE_SIZE 20
 
 typedef struct s_number
 {
@@ -34,6 +34,8 @@ t_number	*init_stack(int ac, char **av);
 int			number_in_range(int n, int index);
 int			moves_to_next_number(t_number *stack, int size, int index);
 t_number	*search_push(t_number	*stack_a, int size);
+int			moves_tmp(t_number *stack, int size);
+void	search_push_to_a(t_number *stack_a, t_number *stack_b, int size);
 
 int			swap(t_number *stack, int size);
 int			push(t_number *from, t_number *to, int *s_from, int *s_to);
