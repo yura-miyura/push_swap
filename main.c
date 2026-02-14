@@ -6,30 +6,75 @@
 /*   By: yartym <yartym@student.42london.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 08:40:12 by yartym            #+#    #+#             */
-/*   Updated: 2026/02/13 12:03:13 by yartym           ###   ########.fr       */
+/*   Updated: 2026/02/14 15:32:01 by yartym           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+int	a_only_with_lis(t_number *stack_a, int size_a)
+{
+	int	i;
+
+	i = 0;
+	while (i < size_a)
+		if (!stack_a[i++].lis)
+			return (0);
+	return (1);
+}
+
+static int moves_to_none_lis(t_number *stack, int size)
+{
+	int	reverse;
+	int	rotate;
+
+	reverse = size - 1;
+	rotate = 0;
+	if (!stack[0].lis)
+		return (0);
+	while (stack[rotate].lis)
+		rotate++;
+	while (stack[reverse].lis)
+		reverse--;
+	if (rotate < size - reverse)
+		return (rotate);
+	else
+	 	return ((size  - reverse) * (-1));
+}
+
+static void	sort_lis(t_number *stack_a, t_number *stack_b, int *size_a, int *size_b)
+{
+	int	moves;
+
+	while (!a_only_with_lis(stack_a, *size_a))
+	{
+		moves = moves_to_none_lis(stack_a, *size_a);
+		while (moves != 0)
+		{
+			if (moves-- > 0)
+				ra(stack_a, *size_a);
+			else if (moves++ < 0)
+				rra(stack_a, *size_a);
+		}
+		pb(stack_a, stack_b, size_a, size_b);
+	}
+}
+
+
 int	main(int ac, char **av)
 {
 	t_number	*stack_a;
 	t_number	*stack_b;
+	int	size_a;
+	int size_b;
 
+	size_a = ac - 1;
+	size_b = 0;
 	stack_a = init_stack(ac, av);
-	stack_b = search_push(stack_a, ac - 1);
-	search_push_to_a(stack_a, stack_b, ac - 1);
-
-
-	// sort them and return char ** of operationsd
-		//look for the clothest number in range reverse or rotate
-			//go in a direction
-			//push to stack_b
-		//
-	// combine operations
-	// print operations
-	// for (int i = 0; i < ac - 1; i++)
-	// 	printf("%d\n", stack_a[i].index);
+	stack_b = malloc(sizeof(t_number) * ac -1);
+	longest_increasing_subsequence(stack_a, size_a);
+	sort_lis(stack_a, stack_b, &size_a, &size_b);
+	for(int i = 0; i < size_a; i++)
+		printf("%d - %d\n", stack_a[i].number, stack_a[i].lis);
 	return(free(stack_a), free(stack_b), 0);
 }

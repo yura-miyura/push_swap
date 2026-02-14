@@ -6,7 +6,7 @@
 /*   By: yartym <yartym@student.42london.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 18:08:30 by yartym            #+#    #+#             */
-/*   Updated: 2026/02/11 20:01:48 by yartym           ###   ########.fr       */
+/*   Updated: 2026/02/14 13:56:54 by yartym           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,9 @@ t_number *init_stack(int ac, char **av)
 	{
 		numbers[i].number = stack[i];
 		numbers[i].index = value_to_index(tmp, stack[i], ac - 1);
+		numbers[i].lin = 0;
 	}
 	return (free(stack), free(tmp), numbers);
 }
+	int	moves;
 

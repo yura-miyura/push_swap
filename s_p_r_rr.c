@@ -6,7 +6,7 @@
 /*   By: yartym <yartym@student.42london.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 18:16:59 by yartym            #+#    #+#             */
-/*   Updated: 2026/02/12 10:18:52 by yartym           ###   ########.fr       */
+/*   Updated: 2026/02/14 14:09:54 by yartym           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,22 @@ int	reverse_rotate(t_number *stack, int size)
 		return (1);
 	}
 	return (0);
+}
+
+void	ra(t_number *stack_a, int size_a)
+{
+	rotate(stack_a, size_a);
+	ft_putstr_fd("ra\n", 1);
+}
+
+void	rra(t_number *stack_a, int size_a)
+{
+	reverse_rotate(stack_a, size_a);
+	ft_putstr_fd("rra\n", 1);
+}
+
+void	pb(t_number *stack_a, t_number *stack_b, int *size_a, int *size_b)
+{
+	push(stack_a, stack_b, size_a, size_b);
+	ft_putstr_fd("pb\n", 1);
 }
