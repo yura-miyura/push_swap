@@ -64,3 +64,54 @@ void	longest_increasing_subsequence(t_number *stack, int size)
 	}
 	free(lis);
 }
+
+int	a_only_with_lis(t_number *stack_a, int size_a)
+{
+	int	i;
+
+	i = 0;
+	while (i < size_a)
+		if (!stack_a[i++].lis)
+			return (0);
+	return (1);
+}
+
+int moves_to_none_lis(t_number *stack, int size)
+{
+	int	reverse;
+	int	rotate;
+
+	reverse = size - 1;
+	rotate = 0;
+	if (!stack[0].lis)
+		return (0);
+	while (stack[rotate].lis)
+		rotate++;
+	while (stack[reverse].lis)
+		reverse--;
+	if (rotate < size - reverse)
+		return (rotate);
+	else
+	 	return ((size  - reverse) * (-1));
+}
+
+void	sort_lis(t_number *stack_a, t_number *stack_b, int *size_a, int *size_b)
+{
+	longest_increasing_subsequence(stack_a, *size_a);
+	int	moves;
+
+	while (!a_only_with_lis(stack_a, *size_a))
+	{
+		moves = moves_to_none_lis(stack_a, *size_a);
+		while (moves != 0)
+		{
+			if (moves-- > 0)
+				ra(stack_a, *size_a);
+			else if (moves++ < 0)
+				rra(stack_a, *size_a);
+		}
+		pb(stack_a, stack_b, size_a, size_b);
+	}
+}
+
+

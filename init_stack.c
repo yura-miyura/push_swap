@@ -100,9 +100,8 @@ t_number *init_stack(int ac, char **av)
 	{
 		numbers[i].number = stack[i];
 		numbers[i].index = value_to_index(tmp, stack[i], ac - 1);
-		numbers[i].lin = 0;
+		numbers[i].lis = 0;
 	}
 	return (free(stack), free(tmp), numbers);
 }
-	int	moves;
 

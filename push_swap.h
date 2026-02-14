@@ -6,7 +6,7 @@
 /*   By: yartym <yartym@student.42london.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 15:12:46 by yartym            #+#    #+#             */
-/*   Updated: 2026/02/14 15:16:58 by yartym           ###   ########.fr       */
+/*   Updated: 2026/02/14 18:03:48 by yartym           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_number
 	int	lis;
 	int	moves_a;
 	int	moves_b;
+	int	total;
 }				t_number;
 
 int			*put_nbr_in_array(int ac, char **av);
@@ -49,6 +50,9 @@ void	ra(t_number *stack_a, int size_a);
 void	rra(t_number *stack_a, int size_a);
 void	pb(t_number *stack_a, t_number *stack_b, int *size_a, int *size_b);
 
+// lis
+void	sort_lis(t_number *stack_a, t_number *stack_b, int *size_a, int *size_b);
+int		moves_to_none_lis(t_number *stack, int size);
 void	longest_increasing_subsequence(t_number *stack, int size);
 int		a_only_with_lis(t_number *stack_a, int size_a);
 int		*init_lis(int	size);
