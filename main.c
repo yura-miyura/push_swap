@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yuriiartymicloud.com <yuriiartymicloud.    +#+  +:+       +#+        */
+/*   By: yartym <yartym@student.42london.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/28 15:25:12 by yuriiartymi       #+#    #+#             */
-/*   Updated: 2026/01/11 22:46:05 by yuriiartymi      ###   ########.fr       */
+/*   Created: 2026/02/08 08:40:12 by yartym            #+#    #+#             */
+/*   Updated: 2026/02/13 19:24:30 by yartym           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-// Outputs a string to a file descriptor.
-void	ft_putstr_fd(char *s, int fd)
+int	main(int ac, char **av)
 {
-	size_t	s_len;
+	t_node	**stack_a;
 
-	if (!s)
-		return ;
-	s_len = ft_strlen(s);
-	write(fd, s, s_len);
+	stack_a = init_stack();
+	put_input_in_stack(stack_a, ac, av);
+	iter_put_nb_free(stack_a);
 }

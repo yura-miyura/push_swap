@@ -6,42 +6,34 @@
 #    By: yuriiartymicloud.com <yuriiartymicloud.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/21 18:12:56 by yuriiartymi       #+#    #+#              #
-#    Updated: 2025/12/25 09:51:06 by yuriiartymi      ###   ########.fr        #
+#    Updated: 2026/02/13 19:25:12 by yartym           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+NAME = push_swap
 CC = cc
-AR = ar -rcs
-OFLAGS = -Wall -Werror -Wextra
+OFLAGS = -g -Wall -Werror -Wextra
 DEL = rm -rf
 LIBFT_DIR = ./libft
 LIBFT = ${LIBFT_DIR}/libft.a
-OBJDIR = obj/
+OBJ_DIR = obj
 
-SRCS_PRINTF = ft_printf.c \
-		len.c \
-		print.c \
-		put.c \
-		format.c \
-		padding.c \
-		is.c \
+SRCS = main.c \
+		lst.c \
+		utils.c \
 
-OBJS := ${SRCS:.c=.o}
+OBJS = $(addprefix ${OBJ_DIR}/, ${SRCS:.c=.o})
 
 all: ${NAME}
 
-bonus: all
-
 ${NAME}: ${OBJS}
 	make -C ${LIBFT_DIR}
-	cp ${LIBFT} ${NAME}
-	${AR} ${NAME} ${OBJS}
+	${CC} ${OFLAGS} $^ ${LIBFT} -o $@
 
-${OBJDIR}:
+${OBJ_DIR}:
 	mkdir -p $@
 
-${OBJS}: %.o: %.c
+${OBJS}: ${OBJ_DIR}/%.o: %.c | ${OBJ_DIR}
 	${CC} ${OFLAGS} -c $< -o $@
 
 fclean: clean
@@ -49,7 +41,7 @@ fclean: clean
 
 clean:
 	make fclean -C ${LIBFT_DIR}
-	${DEL} ${OBJS}
+	${DEL} ${OBJ_DIR}
 
 re: fclean all
 
