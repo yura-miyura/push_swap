@@ -44,14 +44,14 @@ int	main(int ac, char **av)
 	stack_b = malloc(sizeof(t_number) * ac -1);
 	sort_lis(stack_a, stack_b, &size_a, &size_b);
 	put_b_in_a(stack_a, stack_b, &size_a, &size_b);
-	// int j = moves_to_get(stack_a, size_a, 0);
-	// if (j > 0)
-	// 	while (j-- > 0)
-	// 		ra(stack_a, size_a);
-	// if (j < 0)
-	// 	while (j++ < 0)
-	// 		rra(stack_a, size_a);
+	int j = moves_to_get(stack_a, size_a, 0);
+	if (j > 0)
+		while (j-- > 0)
+			ra(stack_a, size_a);
+	else if (j < 0)
+		while (j++ < 0)
+			rra(stack_a, size_a);
 	for(int i = 0; i < size_a; i++)
-		printf("%d - %d\n", stack_a[i].index, stack_a[i].lis);
+		printf("%d - %d - %d\n", stack_a[i].number, stack_a[i].index, stack_a[i].lis);
 	return(free(stack_a), free(stack_b), 0);
 }

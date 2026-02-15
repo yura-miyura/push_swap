@@ -12,25 +12,47 @@
 
 #include "push_swap.h"
 
+int	smallest_index(t_number *stack, int size)
+{
+	int s_i;
+	int	i;
+
+	i = 0;
+	s_i = 0;
+	while (++i < size)
+		if (stack[i].index < stack[s_i].index)
+			s_i = i;
+	return (s_i);
+}
+
+int	target_position(t_number *stack, int size, int index)
+{
+	int	i;
+	int	count;
+	int min;
+
+	count = -1;
+	min = smallest_index(stack, size);
+	i = min;
+	while (++count < size)
+	{
+		if (stack[i].index > index)
+			return (i);
+		i++;
+		if (i == size)
+			i = 0;
+	}
+	return (min);
+}
+
 int moves_to_position_in_a(t_number *stack, int size, int index)
 {
-	int	reverse;
-	int	rotate;
+	int	target;
 
-	reverse = size;
-	rotate = 0;
-	if (stack[0].index > index && stack[size - 1].index < index)
-		return (0);
-	while (++rotate < size)
-		if(stack[rotate].index > index && stack[rotate - 1].index < index)
-			break ;
-	while (--reverse > 0)
-		if(stack[reverse].index > index && stack[reverse - 1].index < index)
-			break ;
-	if (rotate < size - reverse)
-		return (rotate);
-	else
-		return ((size  - reverse) * (-1));
+	target = target_position(stack, size, index);
+	if (target <= size / 2)
+		return (target);
+	return (target - size);
 }
 
 void	recalc_stack_b(t_number *stack_a, t_number *stack_b, int size_a, int size_b)
@@ -41,11 +63,10 @@ void	recalc_stack_b(t_number *stack_a, t_number *stack_b, int size_a, int size_b
 	while (i < size_b)
 	{
 		stack_b[i].moves_a = moves_to_position_in_a(stack_a, size_a, stack_b[i].index);
-		// stack_b[i].moves_b = i;
-		if (i < size_b / 2)
+		if (i <= size_b / 2)
 			stack_b[i].moves_b = i;
 		else
-			stack_b[i].moves_b = (size_b - i) * (-1);
+			stack_b[i].moves_b = i - size_b;
 		i++;
 	}
 }
