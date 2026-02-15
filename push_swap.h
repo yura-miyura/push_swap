@@ -6,7 +6,7 @@
 /*   By: yartym <yartym@student.42london.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 15:12:46 by yartym            #+#    #+#             */
-/*   Updated: 2026/02/14 18:03:48 by yartym           ###   ########.fr       */
+/*   Updated: 2026/02/15 07:53:09 by yartym           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,11 @@ int			reverse_rotate(t_number *stack, int size);
 void	ra(t_number *stack_a, int size_a);
 void	rra(t_number *stack_a, int size_a);
 void	pb(t_number *stack_a, t_number *stack_b, int *size_a, int *size_b);
+void	pa(t_number *stack_a, t_number *stack_b, int *size_a, int *size_b);
+void	rr(t_number *stack_a, t_number *stack_b, int size_a, int size_b);
+void	rrr(t_number *stack_a, t_number *stack_b, int size_a, int size_b);
+void	rrb(t_number *stack_b, int size_b);
+void	rb(t_number *stack_b, int size_b);
 
 // lis
 void	sort_lis(t_number *stack_a, t_number *stack_b, int *size_a, int *size_b);
@@ -56,5 +61,19 @@ int		moves_to_none_lis(t_number *stack, int size);
 void	longest_increasing_subsequence(t_number *stack, int size);
 int		a_only_with_lis(t_number *stack_a, int size_a);
 int		*init_lis(int	size);
+
+// count
+void	recalc_stack_b(t_number *stack_a, t_number *stack_b, int size_a, int size_b);
+int		moves_to_position_in_a(t_number *stack, int size, int index);
+int		find_the_best_deal(t_number *stack, int size);
+
+int max_val(int a, int b);
+int abs_val(int n);
+int	count_moves(int a, int b);
+void	put_b_in_a(t_number *stack_a, t_number *stack_b, int *size_a, int *size_b);
+
+int	biggest_index(t_number *stack, int size);
+int moves_to_get(t_number *stack, int size, int i);
+void	move_biggest(t_number *stack_a, t_number *stack_b, int *size_a, int *size_b);
 
 #endif
