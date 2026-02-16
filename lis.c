@@ -6,13 +6,13 @@
 /*   By: yartym <yartym@student.42london.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/14 13:00:14 by yartym            #+#    #+#             */
-/*   Updated: 2026/02/15 08:53:38 by yartym           ###   ########.fr       */
+/*   Updated: 2026/02/16 23:47:14 by yartym           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	*init_lis(int	size)
+int	*init_lis(int size)
 {
 	int	*lis;
 	int	i;
@@ -73,7 +73,7 @@ int	longest_increasing_subsequence(t_number *stack, int size)
 	return (mark_lis(stack, lis, size));
 }
 
-static int next_number(t_number *stack, int size)
+static int	next_number(t_number *stack, int size)
 {
 	int	reverse;
 	int	rotate;
@@ -117,5 +117,3 @@ void	sort_lis(t_number *stack_a, t_number *stack_b, int *size_a, int *size_b)
 		pb(stack_a, stack_b, size_a, size_b);
 	}
 }
-
-

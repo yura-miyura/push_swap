@@ -6,7 +6,7 @@
 #    By: yuriiartymicloud.com <yuriiartymicloud.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/21 18:12:56 by yuriiartymi       #+#    #+#              #
-#    Updated: 2026/02/15 07:57:40 by yartym           ###   ########.fr        #
+#    Updated: 2026/02/16 23:30:21 by yartym           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ SRCS = main.c \
 		lis.c \
 		target.c \
 		move_to_a.c \
+		sep_moves.c
 
 OBJS = $(addprefix ${OBJ_DIR}/, ${SRCS:.c=.o})
 

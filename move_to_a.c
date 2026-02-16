@@ -6,7 +6,7 @@
 /*   By: yartym <yartym@student.42london.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/14 19:49:21 by yartym            #+#    #+#             */
-/*   Updated: 2026/02/15 08:32:35 by yartym           ###   ########.fr       */
+/*   Updated: 2026/02/16 23:38:19 by yartym           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ void	put_b_in_a(t_number *stack_a, t_number *stack_b, int *size_a, int *size_b)
 {
 	while (*size_b != 0)
 	{
-		recalc_stack(stack_a, stack_b, *size_a, *size_b);
+		recalc(stack_a, stack_b, *size_a, *size_b);
 		best_target(stack_b, *size_b);
 		move_stacks(stack_a, stack_b, *size_a, *size_b);
 		pa(stack_a, stack_b, size_a, size_b);

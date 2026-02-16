@@ -6,7 +6,7 @@
 /*   By: yuriiartymicloud.com <yuriiartymicloud.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 07:36:45 by yuriiartymi       #+#    #+#             */
-/*   Updated: 2026/02/13 08:45:04 by yartym           ###   ########.fr       */
+/*   Updated: 2026/02/16 23:31:31 by yartym           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		s1_len;
 	int		s2_len;
 
-	if (!s1 && !s2)
+	if (!s1 || !s2)
 		return (NULL);
-	else if (!s1)
-		s1 = "";
-	else if (!s2)
-		s2 = "";
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2);
 	size = s1_len + s2_len;

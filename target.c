@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   count.c                                            :+:      :+:    :+:   */
+/*   target.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yartym <yartym@student.42london.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/14 16:46:43 by yartym            #+#    #+#             */
-/*   Updated: 2026/02/14 20:09:51 by yartym           ###   ########.fr       */
+/*   Updated: 2026/02/16 23:41:28 by yartym           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	smallest_number(t_number *stack, int size)
 {
-	int s_i;
+	int	s_i;
 	int	i;
 
 	i = 0;
@@ -29,7 +29,7 @@ int	target_position(t_number *stack, int size, int number)
 {
 	int	i;
 	int	count;
-	int min;
+	int	min;
 
 	count = -1;
 	min = smallest_number(stack, size);
@@ -45,7 +45,7 @@ int	target_position(t_number *stack, int size, int number)
 	return (min);
 }
 
-int moves_target(t_number *stack, int size, int number)
+int	moves_target(t_number *stack, int size, int number)
 {
 	int	target;
 
@@ -55,18 +55,18 @@ int moves_target(t_number *stack, int size, int number)
 	return (target - size);
 }
 
-void	recalc_stack(t_number *stack_a, t_number *stack_b, int size_a, int size_b)
+void	recalc(t_number *stack_a, t_number *stack_b, int s_a, int s_b)
 {
 	int	i;
 
 	i = 0;
-	while (i < size_b)
+	while (i < s_b)
 	{
-		stack_b[i].moves_a = moves_target(stack_a, size_a, stack_b[i].number);
-		if (i <= size_b / 2)
+		stack_b[i].moves_a = moves_target(stack_a, s_a, stack_b[i].number);
+		if (i <= s_b / 2)
 			stack_b[i].moves_b = i;
 		else
-			stack_b[i].moves_b = i - size_b;
+			stack_b[i].moves_b = i - s_b;
 		i++;
 	}
 }
@@ -74,7 +74,7 @@ void	recalc_stack(t_number *stack_a, t_number *stack_b, int size_a, int size_b)
 void	best_target(t_number *stack, int size)
 {
 	int	i;
-	int best_i;
+	int	best_i;
 	int	best;
 	int	moves;
 
