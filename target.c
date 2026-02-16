@@ -45,7 +45,7 @@ int	target_position(t_number *stack, int size, int number)
 	return (min);
 }
 
-int moves_to_position_in_a(t_number *stack, int size, int number)
+int moves_target(t_number *stack, int size, int number)
 {
 	int	target;
 
@@ -55,14 +55,14 @@ int moves_to_position_in_a(t_number *stack, int size, int number)
 	return (target - size);
 }
 
-void	recalc_stack_b(t_number *stack_a, t_number *stack_b, int size_a, int size_b)
+void	recalc_stack(t_number *stack_a, t_number *stack_b, int size_a, int size_b)
 {
 	int	i;
 
 	i = 0;
 	while (i < size_b)
 	{
-		stack_b[i].moves_a = moves_to_position_in_a(stack_a, size_a, stack_b[i].number);
+		stack_b[i].moves_a = moves_target(stack_a, size_a, stack_b[i].number);
 		if (i <= size_b / 2)
 			stack_b[i].moves_b = i;
 		else
@@ -71,7 +71,7 @@ void	recalc_stack_b(t_number *stack_a, t_number *stack_b, int size_a, int size_b
 	}
 }
 
-int find_the_best_deal(t_number *stack, int size)
+void	best_target(t_number *stack, int size)
 {
 	int	i;
 	int best_i;
@@ -90,5 +90,5 @@ int find_the_best_deal(t_number *stack, int size)
 			best_i = i;
 		}
 	}
-	return (best_i);
+	stack[best_i].target = 1;
 }

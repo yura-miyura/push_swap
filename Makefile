@@ -22,7 +22,7 @@ SRCS = main.c \
 		init_stack.c \
 		s_p_r_rr.c \
 		lis.c \
-		count.c \
+		target.c \
 		move_to_a.c \
 
 OBJS = $(addprefix ${OBJ_DIR}/, ${SRCS:.c=.o})

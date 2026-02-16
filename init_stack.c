@@ -42,52 +42,12 @@ int	valid_arg(char *arg, int (*f)(int))
 	return (1);
 }
 
-int *bubble_sort(int *array, int size)
-{
-	int	i;
-	int	swapped;
-	int	tmp;
-
-	i = 0;
-	swapped = 0;
-	if (!array)
-		return (NULL);
-	while(i < size - 1)
-	{
-		if (array[i] > array[i + 1])
-		{
-			tmp = array[i];
-			array[i] = array[i + 1];
-			array[i + 1] = tmp;
-			swapped = 1;
-		}
-		if (++i == size - 1 && swapped)
-		{
-			i = 0;
-			swapped = 0;
-		}
-	}
-	return (array);
-}
-
 // Converts value to it's index in sorted array. Returns -1 on Error
-int	value_to_index(int *tmp, int n, int size)
-{
-	int	i;
-
-	i = -1;
-	while(tmp && ++i < size)
-		if (n == tmp[i])
-			return (i);
-	return (-1);
-}
-
-t_number *init_stack(int ac, char **av)
+t_number	*init_stack(int ac, char **av)
 {
 	int			*stack;
 	t_number	*numbers;
 	int			i;
-
 
 	stack = put_nbr_in_array(ac, av);
 	numbers = malloc(sizeof (t_number) * ac - 1);
@@ -98,6 +58,7 @@ t_number *init_stack(int ac, char **av)
 	{
 		numbers[i].number = stack[i];
 		numbers[i].lis = 0;
+		numbers[i].target = 0;
 	}
 	return (free(stack), numbers);
 }

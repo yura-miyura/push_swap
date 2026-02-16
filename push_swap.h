@@ -24,6 +24,7 @@ typedef struct s_number
 	int	lis;
 	int	moves_a;
 	int	moves_b;
+	int	target;
 }				t_number;
 
 int			*put_nbr_in_array(int ac, char **av);
@@ -52,17 +53,17 @@ int			longest_increasing_subsequence(t_number *stack, int size);
 int			*init_lis(int	size);
 
 // count
-void		recalc_stack_b(t_number *stack_a, t_number *stack_b, int size_a, int size_b);
-int			moves_to_position_in_a(t_number *stack, int size, int index);
-int			find_the_best_deal(t_number *stack, int size);
+int			smallest_number(t_number *stack, int size);
+int			target_position(t_number *stack, int size, int number);
+void		recalc_stack(t_number *stack_a, t_number *stack_b, int size_a, int size_b);
+int			moves_target(t_number *stack, int size, int number);
+void		best_target(t_number *stack, int size);
 
 int			max_val(int a, int b);
 int			abs_val(int n);
 int			count_moves(int a, int b);
 void		put_b_in_a(t_number *stack_a, t_number *stack_b, int *size_a, int *size_b);
 
-int			smallest_number(t_number *stack, int size);
-int			target_position(t_number *stack, int size, int number);
 
 void		sort_numbers(t_number *stack_a, t_number *stack_b, int *size_a, int *size_b);
 
