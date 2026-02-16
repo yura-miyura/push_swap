@@ -26,9 +26,30 @@ int	*init_lis(int	size)
 	return (lis);
 }
 
-// create 0 1 array of numbers, another function will take my array of numbers and my array of 01 and pushing all the numbers with coresponding 0 to stackb leaving lis numbers intackt in stacka:
+static int	mark_lis(t_number *stack, int *lis, int size)
+{
+	int	i;
+	int	j;
+	int	count;
 
-void	longest_increasing_subsequence(t_number *stack, int size)
+	i = -1;
+	j = 0;
+	while (++i < size)
+		if (lis[i] > j)
+			j = lis[i];
+	count = j;
+	while (--i >= 0)
+	{
+		if (lis[i] == j)
+		{
+			stack[i].lis = 1;
+			j--;
+		}
+	}
+	return (free(lis), count);
+}
+
+int	longest_increasing_subsequence(t_number *stack, int size)
 {
 	int	*lis;
 	int	i;
@@ -36,7 +57,7 @@ void	longest_increasing_subsequence(t_number *stack, int size)
 
 	lis = init_lis(size);
 	if (!lis)
-		return ;
+		return (-1);
 	i = 0;
 	while (i < size)
 	{
@@ -49,62 +70,37 @@ void	longest_increasing_subsequence(t_number *stack, int size)
 		}
 		i++;
 	}
-	i = -1;
-	j = 0;
-	while (++i < size)
-		if (lis[i] > j)
-			j = lis[i];
-	i = size - 1;
-	while (i >= 0)
-	{
-		if (lis[i] == j)
-		{
-			stack[i].lis = 1;
-			j--;
-		}
-		i--;
-	}
-	free(lis);
+	return (mark_lis(stack, lis, size));
 }
 
-int	a_only_with_lis(t_number *stack_a, int size_a)
-{
-	int	i;
-
-	i = 0;
-	while (i < size_a)
-		if (!stack_a[i++].lis)
-			return (0);
-	return (1);
-}
-
-int moves_to_none_lis(t_number *stack, int size)
+static int next_number(t_number *stack, int size)
 {
 	int	reverse;
 	int	rotate;
+	int	i;
 
-	reverse = size - 1;
 	rotate = 0;
-	if (!stack[0].lis)
-		return (0);
-	while (stack[rotate].lis)
+	while (rotate < size && stack[rotate].lis)
 		rotate++;
-	while (stack[reverse].lis)
+	reverse = size - 1;
+	while (reverse > 0 && stack[reverse].lis)
 		reverse--;
-	if (rotate < size - reverse)
-		return (rotate);
+	if (rotate < (size - reverse))
+		i = rotate;
 	else
-	 	return ((size  - reverse) * (-1));
+		i = reverse - size;
+	return (i);
 }
 
 void	sort_lis(t_number *stack_a, t_number *stack_b, int *size_a, int *size_b)
 {
-	longest_increasing_subsequence(stack_a, *size_a);
+	int	lis;
 	int	moves;
 
-	while (!a_only_with_lis(stack_a, *size_a))
+	lis = longest_increasing_subsequence(stack_a, *size_a);
+	while (*size_a != lis)
 	{
-		moves = moves_to_none_lis(stack_a, *size_a);
+		moves = next_number(stack_a, *size_a);
 		while (moves != 0)
 		{
 			if (moves > 0)
