@@ -26,6 +26,8 @@ int	*init_lis(int	size)
 	return (lis);
 }
 
+// create 0 1 array of numbers, another function will take my array of numbers and my array of 01 and pushing all the numbers with coresponding 0 to stackb leaving lis numbers intackt in stacka:
+
 void	longest_increasing_subsequence(t_number *stack, int size)
 {
 	int	*lis;

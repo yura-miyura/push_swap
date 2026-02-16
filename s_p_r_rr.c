@@ -74,7 +74,7 @@ void	rb(t_number *stack_b, int size_b)
 
 void	rrb(t_number *stack_b, int size_b)
 {
-	rotate(stack_b, size_b);
+	reverse_rotate(stack_b, size_b);
 	ft_putstr_fd("rrb\n", 1);
 }
 

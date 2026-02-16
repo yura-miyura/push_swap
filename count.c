@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int	smallest_index(t_number *stack, int size)
+int	smallest_number(t_number *stack, int size)
 {
 	int s_i;
 	int	i;
@@ -20,23 +20,23 @@ int	smallest_index(t_number *stack, int size)
 	i = 0;
 	s_i = 0;
 	while (++i < size)
-		if (stack[i].index < stack[s_i].index)
+		if (stack[i].number < stack[s_i].number)
 			s_i = i;
 	return (s_i);
 }
 
-int	target_position(t_number *stack, int size, int index)
+int	target_position(t_number *stack, int size, int number)
 {
 	int	i;
 	int	count;
 	int min;
 
 	count = -1;
-	min = smallest_index(stack, size);
+	min = smallest_number(stack, size);
 	i = min;
 	while (++count < size)
 	{
-		if (stack[i].index > index)
+		if (stack[i].number > number)
 			return (i);
 		i++;
 		if (i == size)
@@ -45,11 +45,11 @@ int	target_position(t_number *stack, int size, int index)
 	return (min);
 }
 
-int moves_to_position_in_a(t_number *stack, int size, int index)
+int moves_to_position_in_a(t_number *stack, int size, int number)
 {
 	int	target;
 
-	target = target_position(stack, size, index);
+	target = target_position(stack, size, number);
 	if (target <= size / 2)
 		return (target);
 	return (target - size);
@@ -62,7 +62,7 @@ void	recalc_stack_b(t_number *stack_a, t_number *stack_b, int size_a, int size_b
 	i = 0;
 	while (i < size_b)
 	{
-		stack_b[i].moves_a = moves_to_position_in_a(stack_a, size_a, stack_b[i].index);
+		stack_b[i].moves_a = moves_to_position_in_a(stack_a, size_a, stack_b[i].number);
 		if (i <= size_b / 2)
 			stack_b[i].moves_b = i;
 		else

@@ -17,12 +17,9 @@
 # include <stdio.h>
 # include "libft/includes/libft.h"
 
-# define RANGE_SIZE 20
-
 typedef struct s_number
 {
 	int	number;
-	int	index;
 	int	lis;
 	int	moves_a;
 	int	moves_b;
@@ -73,8 +70,8 @@ int	count_moves(int a, int b);
 void	put_b_in_a(t_number *stack_a, t_number *stack_b, int *size_a, int *size_b);
 
 int	biggest_index(t_number *stack, int size);
-int	smallest_index(t_number *stack, int size);
-int	target_position(t_number *stack, int size, int index);
+int	smallest_number(t_number *stack, int size);
+int	target_position(t_number *stack, int size, int number);
 int moves_to_get(t_number *stack, int size, int i);
 void	move_biggest(t_number *stack_a, t_number *stack_b, int *size_a, int *size_b);
 
