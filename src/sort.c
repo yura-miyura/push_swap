@@ -6,7 +6,7 @@
 /*   By: yartym <yartym@student.42london.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/14 19:49:21 by yartym            #+#    #+#             */
-/*   Updated: 2026/02/17 09:10:50 by yartym           ###   ########.fr       */
+/*   Updated: 2026/02/17 15:23:33 by yartym           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,15 +46,7 @@ void	put_b_in_a(t_number *st_a, t_number *st_b, int *s_a, int *s_b)
 
 void	sort_stack(t_number *st_a, t_number *st_b, int *s_a, int *s_b)
 {
-	int	n;
-
 	sort_lis(st_a, st_b, s_a, s_b);
 	put_b_in_a(st_a, st_b, s_a, s_b);
-	n = smallest_number(st_a, *s_a);
-	if (n <= (*s_a) / 2)
-		while (n-- > 0)
-			rotate_or_reverse(st_a, *s_a, "ra");
-	else
-		while (n++ - *s_a != 0)
-			rotate_or_reverse(st_a, *s_a, "rra");
+	get_smallest_first(st_a, *s_a);
 }
