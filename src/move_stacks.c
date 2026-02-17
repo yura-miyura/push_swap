@@ -74,7 +74,7 @@ void	move_stacks(t_number *st_a, t_number *st_b, int s_a, int s_b)
 			target.moves_a++;
 			target.moves_b++;
 		}
-		else if (target.moves_a < 0 && target.moves_b < 0)
+		else if (target.moves_a > 0 && target.moves_b > 0)
 		{
 			rr(st_a, st_b, s_a, s_b);
 			target.moves_a--;

@@ -17,7 +17,7 @@ void	get_smallest_first(t_number *stack, int size)
 	int	moves;
 
 	moves = smallest_number(stack, size);
-	if (moves > size/ 2)
+	if (moves > size / 2)
 		moves = (moves - size);
 	while (moves)
 	{
@@ -33,7 +33,6 @@ void	get_smallest_first(t_number *stack, int size)
 		}
 	}
 }
-
 
 void	sort_three(t_number *stack, int size)
 {
