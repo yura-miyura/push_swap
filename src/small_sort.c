@@ -36,19 +36,30 @@ void	get_smallest_first(t_number *stack, int size)
 
 void	sort_three(t_number *stack, int size)
 {
-	while (!(stack[0].number < stack[1].number
-			&& stack[1].number < stack[2].number))
+	if (size == 3)
 	{
-		if (stack[0].number > stack[1].number
-			&& stack[2].number > stack[0].number)
+		while (!(stack[0].number < stack[1].number
+				&& stack[1].number < stack[2].number))
+		{
+			if (stack[0].number > stack[1].number
+				&& stack[2].number > stack[0].number)
+			{
+				swap(stack, size);
+				ft_putstr_fd("sa\n", 1);
+			}
+			else if (stack[0].number > stack[1].number)
+				rotate_or_reverse(stack, size, "ra");
+			else if (stack[0].number < stack[1].number)
+				rotate_or_reverse(stack, size, "rra");
+		}
+	}
+	else if (size == 2)
+	{
+		if (stack[0].number > stack[1].number)
 		{
 			swap(stack, size);
 			ft_putstr_fd("sa\n", 1);
 		}
-		else if (stack[0].number > stack[1].number)
-			rotate_or_reverse(stack, size, "ra");
-		else if (stack[0].number < stack[1].number)
-			rotate_or_reverse(stack, size, "rra");
 	}
 }
 

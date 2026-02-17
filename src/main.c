@@ -19,6 +19,8 @@ int	main(int ac, char **av)
 	int			size_a;
 	int			size_b;
 
+	if (ac == 1)
+		return (0);
 	stack_a = init_stack(ac, av);
 	stack_b = malloc(sizeof(t_number) * ac - 1);
 	size_a = ac - 1;
