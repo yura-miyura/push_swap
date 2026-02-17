@@ -6,7 +6,7 @@
 /*   By: yartym <yartym@student.42london.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 08:40:12 by yartym            #+#    #+#             */
-/*   Updated: 2026/02/17 14:57:16 by yartym           ###   ########.fr       */
+/*   Updated: 2026/02/17 15:25:51 by yartym           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,5 @@ int	main(int ac, char **av)
 		sort_four_five(stack_a, stack_b, &size_a, &size_b);
 	else
 		sort_stack(stack_a, stack_b, &size_a, &size_b);
-	// for(int i = 0; i < size_a; i++)
-	// 	printf("%d - %d\n", stack_a[i].number, stack_a[i].lis);
 	return (free(stack_a), free(stack_b), 0);
 }

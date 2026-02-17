@@ -6,7 +6,7 @@
 /*   By: yartym <yartym@student.42london.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 15:12:46 by yartym            #+#    #+#             */
-/*   Updated: 2026/02/17 15:00:36 by yartym           ###   ########.fr       */
+/*   Updated: 2026/02/17 15:23:06 by yartym           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_number
 	int	target;
 }				t_number;
 
+void		get_smallest_first(t_number *stack, int size);
 void		sort_three(t_number *stack, int size);
 void		sort_four_five(t_number *st_a, t_number *st_b, int *s_a, int *s_b);
 
