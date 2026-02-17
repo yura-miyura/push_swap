@@ -106,36 +106,36 @@ int	main(int ac, char **av)
 	size_b = 0;
 	while (line != NULL)
 	{
-		if (ft_strncmp(line, "sa", 2))
-			swap(stack_a, size_a);
-		else	if (ft_strncmp(line, "sb", 2))
-			swap(stack_b, size_b);
-		else if (ft_strncmp(line , "ss", 2))
-		{
-			swap(stack_a, size_a);
-			swap(stack_b, size_b);
-		}
-		else if (ft_strncmp(line, "ra", 2))
-			rotate(stack_a, size_a);
-		else	if (ft_strncmp(line, "rb", 2))
-			rotate(stack_b, size_b);
-		else if (ft_strncmp(line , "rr", 2))
-		{
-			rotate(stack_a, size_a);
-			rotate(stack_b, size_b);
-		}
-		else if (ft_strncmp(line, "rra", 3))
+		if (!ft_strncmp(line, "rra", 3))
 			reverse_rotate(stack_a, size_a);
-		else	if (ft_strncmp(line, "rrb", 3))
+		else	if (!ft_strncmp(line, "rrb", 3))
 			reverse_rotate(stack_b, size_b);
-		else if (ft_strncmp(line , "rrr", 3))
+		else if (!ft_strncmp(line , "rrr", 3))
 		{
 			reverse_rotate(stack_a, size_a);
 			reverse_rotate(stack_b, size_b);
 		}
-		else if (ft_strncmp(line, "pb", 2))
+		else if (!ft_strncmp(line, "sa", 2))
+			swap(stack_a, size_a);
+		else	if (!ft_strncmp(line, "sb", 2))
+			swap(stack_b, size_b);
+		else if (!ft_strncmp(line , "ss", 2))
+		{
+			swap(stack_a, size_a);
+			swap(stack_b, size_b);
+		}
+		else if (!ft_strncmp(line, "ra", 2))
+			rotate(stack_a, size_a);
+		else	if (!ft_strncmp(line, "rb", 2))
+			rotate(stack_b, size_b);
+		else if (!ft_strncmp(line , "rr", 2))
+		{
+			rotate(stack_a, size_a);
+			rotate(stack_b, size_b);
+		}
+		else if (!ft_strncmp(line, "pb", 2))
 			push(stack_a, stack_b, &size_a, &size_b);
-		else if (ft_strncmp(line, "pa", 2))
+		else if (!ft_strncmp(line, "pa", 2))
 			push(stack_b, stack_a, &size_b, &size_a);
 		else
 		{

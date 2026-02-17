@@ -13,7 +13,7 @@
 NAME = push_swap
 CHECKER = checker
 CC = cc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -g3 -O0 -Wall -Werror -Wextra
 DEL = rm -rf
 LIBFT_DIR = ./libft
 LIBFT = ${LIBFT_DIR}/libft.a
