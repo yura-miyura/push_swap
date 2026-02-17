@@ -6,7 +6,7 @@
 /*   By: yartym <yartym@student.42london.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 18:08:30 by yartym            #+#    #+#             */
-/*   Updated: 2026/02/16 23:43:06 by yartym           ###   ########.fr       */
+/*   Updated: 2026/02/17 13:41:14 by yartym           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,16 @@ int	*put_nbr_in_array(int ac, char **av)
 	return (numbers);
 }
 
-// change ragument check
-
 int	valid_arg(char *arg, int (*f)(int))
 {
+	if (*arg == '-')
+		arg++;
 	while (*arg)
 		if (!(*f)(*(arg++)))
 			return (0);
 	return (1);
 }
 
-// redeclear init function and array
-// Converts value to it's index in sorted array. Returns -1 on Error
 t_number	*init_stack(int ac, char **av)
 {
 	int			*stack;

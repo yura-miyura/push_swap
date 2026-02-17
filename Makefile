@@ -6,17 +6,20 @@
 #    By: yuriiartymicloud.com <yuriiartymicloud.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/21 18:12:56 by yuriiartymi       #+#    #+#              #
-#    Updated: 2026/02/17 09:07:35 by yartym           ###   ########.fr        #
+#    Updated: 2026/02/17 15:03:35 by yartym           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 CC = cc
-OFLAGS = -g -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra
 DEL = rm -rf
 LIBFT_DIR = ./libft
 LIBFT = ${LIBFT_DIR}/libft.a
+LIBFT_INCL = -I ./libft/includes/
 OBJ_DIR = obj
+SRCS_DIR = src
+INCLUDES = -I ./includes/
 
 SRCS = main.c \
 		init_stack.c \
@@ -25,6 +28,7 @@ SRCS = main.c \
 		target.c \
 		sort.c \
 		move_stacks.c \
+		small_sort.c \
 		all_moves.c \
 
 
@@ -34,13 +38,13 @@ all: ${NAME}
 
 ${NAME}: ${OBJS}
 	make -C ${LIBFT_DIR}
-	${CC} ${OFLAGS} $^ ${LIBFT} -o $@
+	${CC} ${CFLAGS} $^ ${LIBFT} -o $@
 
 ${OBJ_DIR}:
 	mkdir -p $@
 
-${OBJS}: ${OBJ_DIR}/%.o: %.c | ${OBJ_DIR}
-	${CC} ${OFLAGS} -c $< -o $@
+${OBJS}: ${OBJ_DIR}/%.o: ${SRCS_DIR}/%.c | ${OBJ_DIR}
+	${CC} ${CFLAGS} ${INCLUDES} ${LIBFT_INCL} -c $< -o $@
 
 fclean: clean
 	${DEL} ${NAME}

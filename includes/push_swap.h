@@ -6,7 +6,7 @@
 /*   By: yartym <yartym@student.42london.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 15:12:46 by yartym            #+#    #+#             */
-/*   Updated: 2026/02/17 09:11:15 by yartym           ###   ########.fr       */
+/*   Updated: 2026/02/17 15:00:36 by yartym           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stdlib.h>
 # include <stdio.h>
-# include "libft/includes/libft.h"
+# include "libft.h"
 
 typedef struct s_number
 {
@@ -25,6 +25,9 @@ typedef struct s_number
 	int	moves_b;
 	int	target;
 }				t_number;
+
+void		sort_three(t_number *stack, int size);
+void		sort_four_five(t_number *st_a, t_number *st_b, int *s_a, int *s_b);
 
 int			*put_nbr_in_array(int ac, char **av);
 int			valid_arg(char *arg, int (*f)(int));
