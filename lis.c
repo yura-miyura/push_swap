@@ -6,7 +6,7 @@
 /*   By: yartym <yartym@student.42london.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/14 13:00:14 by yartym            #+#    #+#             */
-/*   Updated: 2026/02/16 23:47:14 by yartym           ###   ########.fr       */
+/*   Updated: 2026/02/17 08:54:18 by yartym           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,12 +105,12 @@ void	sort_lis(t_number *stack_a, t_number *stack_b, int *size_a, int *size_b)
 		{
 			if (moves > 0)
 			{
-				ra(stack_a, *size_a);
+				rotate_or_reverse(stack_a, *size_a, "ra");
 				moves--;
 			}
 			else if (moves < 0)
 			{
-				rra(stack_a, *size_a);
+				rotate_or_reverse(stack_a, *size_a, "rra");
 				moves++;
 			}
 		}

@@ -6,26 +6,11 @@
 /*   By: yartym <yartym@student.42london.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 08:40:12 by yartym            #+#    #+#             */
-/*   Updated: 2026/02/16 23:48:39 by yartym           ###   ########.fr       */
+/*   Updated: 2026/02/17 09:12:11 by yartym           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	sort_stack(t_number *st_a, t_number *st_b, int *s_a, int *s_b)
-{
-	int	n;
-
-	sort_lis(st_a, st_b, s_a, s_b);
-	put_b_in_a(st_a, st_b, s_a, s_b);
-	n = smallest_number(st_a, *s_a);
-	if (n <= (*s_a) / 2)
-		while (n-- > 0)
-			ra(st_a, *s_a);
-	else
-		while (n++ - *s_a != 0)
-			rra(st_a, *s_a);
-}
 
 int	main(int ac, char **av)
 {

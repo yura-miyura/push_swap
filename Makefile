@@ -6,7 +6,7 @@
 #    By: yuriiartymicloud.com <yuriiartymicloud.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/21 18:12:56 by yuriiartymi       #+#    #+#              #
-#    Updated: 2026/02/16 23:30:21 by yartym           ###   ########.fr        #
+#    Updated: 2026/02/17 09:07:35 by yartym           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,11 +20,13 @@ OBJ_DIR = obj
 
 SRCS = main.c \
 		init_stack.c \
-		s_p_r_rr.c \
+		util_moves.c \
 		lis.c \
 		target.c \
-		move_to_a.c \
-		sep_moves.c
+		sort.c \
+		move_stacks.c \
+		all_moves.c \
+
 
 OBJS = $(addprefix ${OBJ_DIR}/, ${SRCS:.c=.o})
 

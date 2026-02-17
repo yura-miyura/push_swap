@@ -6,36 +6,20 @@
 /*   By: yartym <yartym@student.42london.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 21:08:55 by yartym            #+#    #+#             */
-/*   Updated: 2026/02/16 23:40:15 by yartym           ###   ########.fr       */
+/*   Updated: 2026/02/17 08:55:01 by yartym           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rotate_or_reverse(t_number *stack, int size, char *move);
-
-void	rb(t_number *stack_b, int size_b)
+void	rotate_or_reverse(t_number *stack, int size, char *move)
 {
-	rotate(stack_b, size_b);
-	ft_putstr_fd("rb\n", 1);
-}
-
-void	rrb(t_number *stack_b, int size_b)
-{
-	reverse_rotate(stack_b, size_b);
-	ft_putstr_fd("rrb\n", 1);
-}
-
-void	ra(t_number *stack_a, int size_a)
-{
-	rotate(stack_a, size_a);
-	ft_putstr_fd("ra\n", 1);
-}
-
-void	rra(t_number *stack_a, int size_a)
-{
-	reverse_rotate(stack_a, size_a);
-	ft_putstr_fd("rra\n", 1);
+	if (!ft_strncmp("ra", move, 2) || !ft_strncmp("rb", move, 2))
+		rotate(stack, size);
+	else if (!ft_strncmp("rra", move, 3) || !ft_strncmp("rrb", move, 3))
+		reverse_rotate(stack, size);
+	ft_putstr_fd(move, 1);
+	ft_putchar_fd('\n', 1);
 }
 
 void	pb(t_number *stack_a, t_number *stack_b, int *size_a, int *size_b)

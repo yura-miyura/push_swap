@@ -6,7 +6,7 @@
 /*   By: yartym <yartym@student.42london.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 15:12:46 by yartym            #+#    #+#             */
-/*   Updated: 2026/02/16 23:38:34 by yartym           ###   ########.fr       */
+/*   Updated: 2026/02/17 09:11:15 by yartym           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,11 @@ int			push(t_number *from, t_number *to, int *s_from, int *s_to);
 int			rotate(t_number	*stack, int size);
 int			reverse_rotate(t_number *stack, int size);
 
-void		ra(t_number *stack_a, int size_a);
-void		rra(t_number *stack_a, int size_a);
 void		pb(t_number *stack_a, t_number *stack_b, int *size_a, int *size_b);
 void		pa(t_number *stack_a, t_number *stack_b, int *size_a, int *size_b);
 void		rr(t_number *stack_a, t_number *stack_b, int size_a, int size_b);
 void		rrr(t_number *stack_a, t_number *stack_b, int size_a, int size_b);
-void		rrb(t_number *stack_b, int size_b);
-void		rb(t_number *stack_b, int size_b);
+void		rotate_or_reverse(t_number *stack, int size, char *move);
 
 // lis
 void		sort_lis(t_number *stack_a, t_number *stack_b, int *s_a, int *s_b);
@@ -58,8 +55,8 @@ void		recalc(t_number *stack_a, t_number *stack_b, int s_a, int s_b);
 int			moves_target(t_number *stack, int size, int number);
 void		best_target(t_number *stack, int size);
 
-int			max_val(int a, int b);
-int			abs_val(int n);
+void		move_stacks(t_number *st_a, t_number *st_b, int s_a, int s_b);
+
 int			count_moves(int a, int b);
 void		put_b_in_a(t_number *st_a, t_number *st_b, int *s_a, int *s_b);
 void		sort_stack(t_number *st_a, t_number *st_b, int *s_a, int *s_b);
