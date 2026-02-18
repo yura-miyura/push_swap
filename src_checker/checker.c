@@ -54,16 +54,17 @@ int	stdin_operations(t_number *st_a, int s_a, t_number *st_b, char *line)
 		else if (!ft_strncmp(line, "pa", 2))
 			push(st_b, st_a, &s_b, &s_a);
 		else
-			return (invalid(st_a, st_b), 0);
+			return (invalid(st_a, st_b, line), 0);
+		free(line);
 		line = get_next_line(STDIN_FILENO);
 	}
 	return (1);
 }
 
-void	invalid(t_number *st_a, t_number *st_b)
+void	invalid(t_number *st_a, t_number *st_b, char *line)
 {
 	ft_putstr_fd("Error\n", 1);
-	return (free(st_a), free(st_b));
+	return (free(line), free(st_a), free(st_b));
 }
 
 int	main(int ac, char **av)
@@ -81,7 +82,7 @@ int	main(int ac, char **av)
 	if (!stdin_operations(stack_a, size, stack_b, line))
 		return (1);
 	if (errno != 0)
-		return (invalid(stack_a, stack_b), 1);
+		return (invalid(stack_a, stack_b, line), 1);
 	message = "OK\n";
 	while (--size > 0)
 		if (stack_a[size].number < stack_a[size - 1].number)
