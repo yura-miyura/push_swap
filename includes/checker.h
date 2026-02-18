@@ -6,13 +6,14 @@
 /*   By: yartym <yartym@student.42london.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 18:08:20 by yartym            #+#    #+#             */
-/*   Updated: 2026/02/17 18:09:53 by yartym           ###   ########.fr       */
+/*   Updated: 2026/02/18 12:38:16 by yartym           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHECKER_H
 # define CHECKER_H
 
+# include <errno.h>
 # include "get_next_line.h"
 # include "libft.h"
 # include "push_swap.h"

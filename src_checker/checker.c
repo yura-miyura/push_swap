@@ -6,7 +6,7 @@
 /*   By: yartym <yartym@student.42london.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 11:52:07 by yartym            #+#    #+#             */
-/*   Updated: 2026/02/18 11:54:14 by yartym           ###   ########.fr       */
+/*   Updated: 2026/02/18 12:29:46 by yartym           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,9 @@ int	main(int ac, char **av)
 	stack_b = malloc(sizeof(t_number) * size);
 	line = get_next_line(STDIN_FILENO);
 	if (!stdin_operations(stack_a, size, stack_b, line))
-		return (0);
+		return (1);
+	if (errno == EBADF)
+		return (invalid(stack_a, stack_b), 1);
 	message = "OK\n";
 	while (--size > 0)
 		if (stack_a[size].number < stack_a[size - 1].number)

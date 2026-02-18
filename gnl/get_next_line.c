@@ -6,11 +6,12 @@
 /*   By: yartym <yartym@student.42.fr>              #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026-01-18 10:08:18 by yartym            #+#    #+#             */
-/*   Updated: 2026-01-18 10:08:18 by yartym           ###   ########.fr       */
+/*   Updated: 2026/02/18 12:29:11 by yartym           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include <errno.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -90,7 +91,11 @@ char	*get_next_line(int fd)
 	while (bytes > 0 && !ft_strchr(line, '\n'))
 	{
 		if (!buffer[0])
+		{
 			bytes = read(fd, buffer, BUFFER_SIZE);
+			if (bytes == -1)
+				errno = EBADF;
+		}
 		line = ft_new_line(line, buffer);
 	}
 	return (line);

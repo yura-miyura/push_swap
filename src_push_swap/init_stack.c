@@ -6,7 +6,7 @@
 /*   By: yartym <yartym@student.42london.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 18:08:30 by yartym            #+#    #+#             */
-/*   Updated: 2026/02/17 13:41:14 by yartym           ###   ########.fr       */
+/*   Updated: 2026/02/18 12:37:49 by yartym           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ int	no_dublicates(int *number, int size)
 {
 	int	i;
 	int	j;
-
 
 	i = 0;
 	while (i < size)
@@ -73,9 +72,9 @@ t_number	*init_stack(int ac, char **av)
 	stack = put_nbr_in_array(ac, av);
 	if (!no_dublicates(stack, ac - 1))
 	{
-			free(stack);
-			ft_putstr_fd("Error\n", 1);
-			exit(1);
+		free(stack);
+		ft_putstr_fd("Error\n", 1);
+		exit(1);
 	}
 	numbers = malloc(sizeof (t_number) * ac - 1);
 	if (!stack || !numbers)
