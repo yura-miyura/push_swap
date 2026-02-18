@@ -51,11 +51,22 @@ int	no_dublicates(int *number, int size)
 	return (1);
 }
 
+int	is_sorted(t_number *stack, int size)
+{
+	while (--size)
+		if (stack[size].number < stack[size - 1].number)
+			return (0);
+	return (1);
+
+}
+
 int	valid_arg(char *arg, int (*f)(int))
 {
+	if (ft_atoilong(arg) > INT_MAX || ft_atoilong(arg) < INT_MIN)
+		return (0);
 	if (!*arg)
 		return (0);
-	if (*arg == '-')
+	if (*arg == '-' || *arg == '+')
 		arg++;
 	while (*arg)
 		if (!(*f)(*(arg++)))

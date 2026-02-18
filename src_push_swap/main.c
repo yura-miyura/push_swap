@@ -22,16 +22,19 @@ int	main(int ac, char **av)
 	if (ac == 1)
 		return (0);
 	stack_a = init_stack(ac, av);
-	stack_b = malloc(sizeof(t_number) * ac - 1);
 	size_a = ac - 1;
+	stack_b = malloc(sizeof(t_number) * size_a);
 	size_b = 0;
 	if (!stack_a || !stack_b)
 		return (1);
-	if (ac <= 4)
-		sort_three(stack_a, size_a);
-	else if (ac <= 6)
-		sort_four_five(stack_a, stack_b, &size_a, &size_b);
-	else
-		sort_stack(stack_a, stack_b, &size_a, &size_b);
+	if (!is_sorted(stack_a, size_a))
+	{
+		if (ac <= 4)
+			sort_three(stack_a, size_a);
+		else if (ac <= 6)
+			sort_four_five(stack_a, stack_b, &size_a, &size_b);
+		else
+			sort_stack(stack_a, stack_b, &size_a, &size_b);
+	}
 	return (free(stack_a), free(stack_b), 0);
 }

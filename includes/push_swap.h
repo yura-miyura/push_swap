@@ -30,6 +30,7 @@ void		get_smallest_first(t_number *stack, int size);
 void		sort_three(t_number *stack, int size);
 void		sort_four_five(t_number *st_a, t_number *st_b, int *s_a, int *s_b);
 
+int			is_sorted(t_number *stack, int size);
 int			no_dublicates(int *number, int size);
 int			*put_nbr_in_array(int ac, char **av);
 int			valid_arg(char *arg, int (*f)(int));

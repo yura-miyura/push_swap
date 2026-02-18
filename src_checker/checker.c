@@ -75,6 +75,8 @@ int	main(int ac, char **av)
 	char		*line;
 	char		*message;
 
+	if (ac == 1)
+		return (0);
 	stack_a = init_stack(ac, av);
 	size = ac - 1;
 	stack_b = malloc(sizeof(t_number) * size);
