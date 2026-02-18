@@ -34,8 +34,28 @@ int	*put_nbr_in_array(int ac, char **av)
 	return (numbers);
 }
 
+int	no_dublicates(int *number, int size)
+{
+	int	i;
+	int	j;
+
+
+	i = 0;
+	while (i < size)
+	{
+		j = i;
+		while (++j < size)
+			if (number[j] == number[i])
+				return (0);
+		i++;
+	}
+	return (1);
+}
+
 int	valid_arg(char *arg, int (*f)(int))
 {
+	if (!*arg)
+		return (0);
 	if (*arg == '-')
 		arg++;
 	while (*arg)
@@ -51,6 +71,12 @@ t_number	*init_stack(int ac, char **av)
 	int			i;
 
 	stack = put_nbr_in_array(ac, av);
+	if (!no_dublicates(stack, ac - 1))
+	{
+			free(stack);
+			ft_putstr_fd("Error\n", 1);
+			exit(1);
+	}
 	numbers = malloc(sizeof (t_number) * ac - 1);
 	if (!stack || !numbers)
 		return (NULL);
