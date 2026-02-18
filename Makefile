@@ -51,11 +51,11 @@ all: ${NAME}
 checker: ${CHECKER}
 
 ${CHECKER}: ${OBJS_CHECKER} ${OBJS_SHARED} ${OBJS_GNL}
-	make -C ${LIBFT_DIR}
+	@make -C ${LIBFT_DIR}
 	${CC} ${CFLAGS} ${INCLUDES} $^ ${LIBFT} -o $@
 
 ${NAME}: ${OBJS_PSWP} ${OBJS_SHARED}
-	make -C ${LIBFT_DIR}
+	@make -C ${LIBFT_DIR}
 	${CC} ${CFLAGS} ${INCLUDES} $^ ${LIBFT} -o $@
 
 ${OBJS_CHECKER}: ${OBJ_DIR}/%.o: ${DIR_CHECKER}/%.c | ${OBJ_DIR}
@@ -71,14 +71,14 @@ ${OBJS_SHARED}: ${OBJ_DIR}/%.o: ${DIR_PSWP}/%.c | ${OBJ_DIR}
 	${CC} ${CFLAGS} ${INCLUDES} ${LIBFT_INCL} -c $< -o $@
 
 ${OBJ_DIR}:
-	mkdir -p $@
+	@mkdir -p $@
 
 fclean: clean
-	make fclean -C ${LIBFT_DIR}
+	@make fclean -C ${LIBFT_DIR}
 	${DEL} ${NAME} ${CHECKER}
 
 clean:
-	make clean -C ${LIBFT_DIR}
+	@make clean -C ${LIBFT_DIR}
 	${DEL} ${OBJ_DIR}
 
 re: fclean all
