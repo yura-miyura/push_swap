@@ -80,7 +80,7 @@ int	main(int ac, char **av)
 	line = get_next_line(STDIN_FILENO);
 	if (!stdin_operations(stack_a, size, stack_b, line))
 		return (1);
-	if (errno == EBADF)
+	if (errno != 0)
 		return (invalid(stack_a, stack_b), 1);
 	message = "OK\n";
 	while (--size > 0)

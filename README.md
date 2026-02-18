@@ -58,8 +58,7 @@ make checker
 **Combined Test (Random Numbers):**
 You can pipe the output of push_swap into the checker using a random number generator:
 ```bash
-ARG=$(shuf -i 0-9999 -n 500 | tr '\n' ' ')
-./push_swap $ARG | ./checker $ARG
+ARG=$(shuf -i 0-9999 -n 500 | tr '\n' ' '); ./push_swap $ARG | ./checker $ARG
 ```
 
 ## Operations

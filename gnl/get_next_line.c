@@ -91,11 +91,7 @@ char	*get_next_line(int fd)
 	while (bytes > 0 && !ft_strchr(line, '\n'))
 	{
 		if (!buffer[0])
-		{
 			bytes = read(fd, buffer, BUFFER_SIZE);
-			if (bytes == -1)
-				errno = EBADF;
-		}
 		line = ft_new_line(line, buffer);
 	}
 	return (line);
