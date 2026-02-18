@@ -1,0 +1,6 @@
+*.o
+*.txt
+push_swap
+checker
+obj/
+*.a

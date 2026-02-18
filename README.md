@@ -79,3 +79,9 @@ ARG=$(shuf -i 0-9999 -n 500 | tr '\n' ' '); ./push_swap $ARG | ./checker $ARG
 
 ## Resources
 
+1) [LIS](https://www.geeksforgeeks.org/dsa/longest-increasing-subsequence-dp-3/)
+2) [Sorting Algorithms](https://www.geeksforgeeks.org/dsa/introduction-to-sorting-algorithm/)
+3) [Errno](https://man7.org/linux/man-pages/man3/errno.3.html)
+4) [Exit](https://man7.org/linux/man-pages/man3/exit.3.html)
+5) [Shuf](https://www.geeksforgeeks.org/linux-unix/shuf-command-in-linux-with-examples/)
+6) [Gemini (for README only)](https://gemini.google.com/app/578fb5376022a7bf?is_sa=1&is_sa=1&android-min-version=301356232&ios-min-version=322.0&campaign_id=bkws&utm_source=sem&utm_medium=paid-media&utm_campaign=bkws&pt=9008&mt=8&ct=p-growth-sem-bkws)
