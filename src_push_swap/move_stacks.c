@@ -19,12 +19,12 @@ static void	stack_a_only(t_number *stack, int size, t_number *target)
 	moves = target->moves_a;
 	if (moves > 0)
 	{
-		rotate_or_reverse(stack, size, "ra");
+		rotate_or_reverse(stack, size, "ra\n");
 		moves--;
 	}
 	else if (moves < 0)
 	{
-		rotate_or_reverse(stack, size, "rra");
+		rotate_or_reverse(stack, size, "rra\n");
 		moves++;
 	}
 	target->moves_a = moves;
@@ -37,12 +37,12 @@ static void	stack_b_only(t_number *stack, int size, t_number *target)
 	moves = target->moves_b;
 	if (moves > 0)
 	{
-		rotate_or_reverse(stack, size, "rb");
+		rotate_or_reverse(stack, size, "rb\n");
 		moves--;
 	}
 	else if (moves < 0)
 	{
-		rotate_or_reverse(stack, size, "rrb");
+		rotate_or_reverse(stack, size, "rrb\n");
 		moves++;
 	}
 	target->moves_b = moves;

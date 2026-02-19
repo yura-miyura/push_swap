@@ -57,7 +57,6 @@ int	is_sorted(t_number *stack, int size)
 		if (stack[size].number < stack[size - 1].number)
 			return (0);
 	return (1);
-
 }
 
 int	valid_arg(char *arg, int (*f)(int))

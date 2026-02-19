@@ -14,12 +14,11 @@
 
 void	rotate_or_reverse(t_number *stack, int size, char *move)
 {
-	if (!ft_strncmp("ra", move, 2) || !ft_strncmp("rb", move, 2))
+	if (!ft_strcmp("ra\n", move) || !ft_strcmp("rb\n", move))
 		rotate(stack, size);
-	else if (!ft_strncmp("rra", move, 3) || !ft_strncmp("rrb", move, 3))
+	else if (!ft_strcmp("rra\n", move) || !ft_strcmp("rrb\n", move))
 		reverse_rotate(stack, size);
 	ft_putstr_fd(move, 1);
-	ft_putchar_fd('\n', 1);
 }
 
 void	pb(t_number *stack_a, t_number *stack_b, int *size_a, int *size_b)

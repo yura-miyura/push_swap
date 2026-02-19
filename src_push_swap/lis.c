@@ -105,12 +105,12 @@ void	sort_lis(t_number *stack_a, t_number *stack_b, int *size_a, int *size_b)
 		{
 			if (moves > 0)
 			{
-				rotate_or_reverse(stack_a, *size_a, "ra");
+				rotate_or_reverse(stack_a, *size_a, "ra\n");
 				moves--;
 			}
 			else if (moves < 0)
 			{
-				rotate_or_reverse(stack_a, *size_a, "rra");
+				rotate_or_reverse(stack_a, *size_a, "rra\n");
 				moves++;
 			}
 		}

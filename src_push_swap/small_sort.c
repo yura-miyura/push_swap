@@ -23,12 +23,12 @@ void	get_smallest_first(t_number *stack, int size)
 	{
 		if (moves > 0)
 		{
-			rotate_or_reverse(stack, size, "ra");
+			rotate_or_reverse(stack, size, "ra\n");
 			moves--;
 		}
 		else
 		{
-			rotate_or_reverse(stack, size, "rra");
+			rotate_or_reverse(stack, size, "rra\n");
 			moves++;
 		}
 	}
@@ -48,9 +48,9 @@ void	sort_three(t_number *stack, int size)
 				ft_putstr_fd("sa\n", 1);
 			}
 			else if (stack[0].number > stack[1].number)
-				rotate_or_reverse(stack, size, "ra");
+				rotate_or_reverse(stack, size, "ra\n");
 			else if (stack[0].number < stack[1].number)
-				rotate_or_reverse(stack, size, "rra");
+				rotate_or_reverse(stack, size, "rra\n");
 		}
 	}
 	else if (size == 2)

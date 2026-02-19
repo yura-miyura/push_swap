@@ -1,5 +1,6 @@
 *.o
 push_swap
 checker
+checker_linux
 obj/
 *.a

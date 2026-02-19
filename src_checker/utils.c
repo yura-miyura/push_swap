@@ -32,14 +32,14 @@ void	rrr(t_number *st_a, t_number *st_b, int s_a, int s_b)
 
 int	is_apply_a(char *line)
 {
-	return (!ft_strncmp(line, "rra", 3)
-		|| !ft_strncmp(line, "sa", 2)
-		|| !ft_strncmp(line, "ra", 2));
+	return (!ft_strcmp(line, "rra\n")
+		|| !ft_strcmp(line, "sa\n")
+		|| !ft_strcmp(line, "ra\n"));
 }
 
 int	is_apply_b(char *line)
 {
-	return (!ft_strncmp(line, "rrb", 3)
-		|| !ft_strncmp(line, "sb", 2)
-		|| !ft_strncmp(line, "rb", 2));
+	return (!ft_strcmp(line, "rrb\n")
+		|| !ft_strcmp(line, "sb\n")
+		|| !ft_strcmp(line, "rb\n"));
 }

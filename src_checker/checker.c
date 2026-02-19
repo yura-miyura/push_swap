@@ -14,21 +14,21 @@
 
 void	apply_a(t_number *stack, int size, char *line)
 {
-	if (!ft_strncmp(line, "rra", 3))
+	if (!ft_strcmp(line, "rra\n"))
 		reverse_rotate(stack, size);
-	else if (!ft_strncmp(line, "sa", 2))
+	else if (!ft_strcmp(line, "sa\n"))
 		swap(stack, size);
-	else if (!ft_strncmp(line, "ra", 2))
+	else if (!ft_strcmp(line, "ra\n"))
 		rotate(stack, size);
 }
 
 void	apply_b(t_number *stack, int size, char *line)
 {
-	if (!ft_strncmp(line, "rrb", 3))
+	if (!ft_strcmp(line, "rrb\n"))
 		reverse_rotate(stack, size);
-	else if (!ft_strncmp(line, "sb", 2))
+	else if (!ft_strcmp(line, "sb\n"))
 		swap(stack, size);
-	else if (!ft_strncmp(line, "rb", 2))
+	else if (!ft_strcmp(line, "rb\n"))
 		rotate(stack, size);
 }
 
@@ -43,15 +43,15 @@ int	stdin_operations(t_number *st_a, int s_a, t_number *st_b, char *line)
 			apply_a(st_a, s_a, line);
 		else if (is_apply_b(line))
 			apply_b(st_b, s_b, line);
-		else if (!ft_strncmp(line, "rrr", 3))
+		else if (!ft_strcmp(line, "rrr\n"))
 			rrr(st_a, st_b, s_a, s_b);
-		else if (!ft_strncmp(line, "ss", 2))
+		else if (!ft_strcmp(line, "ss\n"))
 			ss(st_a, st_b, s_a, s_b);
-		else if (!ft_strncmp(line, "rr", 2))
+		else if (!ft_strcmp(line, "rr\n"))
 			rr(st_a, st_b, s_a, s_b);
-		else if (!ft_strncmp(line, "pb", 2))
+		else if (!ft_strcmp(line, "pb\n"))
 			push(st_a, st_b, &s_a, &s_b);
-		else if (!ft_strncmp(line, "pa", 2))
+		else if (!ft_strcmp(line, "pa\n"))
 			push(st_b, st_a, &s_b, &s_a);
 		else
 			return (invalid(st_a, st_b, line), 0);
