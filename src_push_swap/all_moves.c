@@ -18,13 +18,13 @@ void	rotate_or_reverse(t_number *stack, int size, char *move)
 		rotate(stack, size);
 	else if (!ft_strcmp("rra\n", move) || !ft_strcmp("rrb\n", move))
 		reverse_rotate(stack, size);
-	ft_putstr_fd(move, 1);
+	ft_putstr_fd(move, STDOUT_FILENO);
 }
 
 void	pb(t_number *stack_a, t_number *stack_b, int *size_a, int *size_b)
 {
 	push(stack_a, stack_b, size_a, size_b);
-	ft_putstr_fd("pb\n", 1);
+	ft_putstr_fd("pb\n", STDOUT_FILENO);
 }
 
 void	pa(t_number *stack_a, t_number *stack_b, int *size_a, int *size_b)
@@ -37,12 +37,12 @@ void	rrr(t_number *stack_a, t_number *stack_b, int size_a, int size_b)
 {
 	reverse_rotate(stack_a, size_a);
 	reverse_rotate(stack_b, size_b);
-	ft_putstr_fd("rrr\n", 1);
+	ft_putstr_fd("rrr\n", STDOUT_FILENO);
 }
 
 void	rr(t_number *stack_a, t_number *stack_b, int size_a, int size_b)
 {
 	rotate(stack_a, size_a);
 	rotate(stack_b, size_b);
-	ft_putstr_fd("rr\n", 1);
+	ft_putstr_fd("rr\n", STDOUT_FILENO);
 }

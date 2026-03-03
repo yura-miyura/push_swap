@@ -63,7 +63,7 @@ int	stdin_operations(t_number *st_a, int s_a, t_number *st_b, char *line)
 
 void	invalid(t_number *st_a, t_number *st_b, char *line)
 {
-	ft_putstr_fd("Error\n", 1);
+	ft_putstr_fd("Error\n", STDERR_FILENO);
 	return (free(line), free(st_a), free(st_b));
 }
 
@@ -89,6 +89,6 @@ int	main(int ac, char **av)
 	while (--size > 0)
 		if (stack_a[size].number < stack_a[size - 1].number)
 			message = "KO\n";
-	ft_putstr_fd(message, 1);
+	ft_putstr_fd(message, STDOUT_FILENO);
 	return (free(stack_a), free(stack_b), 0);
 }

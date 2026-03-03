@@ -26,7 +26,7 @@ int	*put_nbr_in_array(int ac, char **av)
 		if (!valid_arg(av[i], ft_isdigit))
 		{
 			free(numbers);
-			ft_putstr_fd("Error\n", 1);
+			ft_putstr_fd("Error\n", STDERR_FILENO);
 			exit(1);
 		}
 		numbers[i - 1] = ft_atoi(av[i]);
@@ -83,7 +83,7 @@ t_number	*init_stack(int ac, char **av)
 	if (!no_dublicates(stack, ac - 1))
 	{
 		free(stack);
-		ft_putstr_fd("Error\n", 1);
+		ft_putstr_fd("Error\n", STDERR_FILENO);
 		exit(1);
 	}
 	numbers = malloc(sizeof (t_number) * ac - 1);
